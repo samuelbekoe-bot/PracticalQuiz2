@@ -28,19 +28,15 @@
     <img id="starsTex" src="texture/2k_stars_milky_way.jpg">
   </a-assets>
 
-  <!-- ================= LIGHTING (FIXED) ================= -->
-
-  <!-- Soft global light -->
+  <!-- ================= LIGHTING ================= -->
   <a-entity light="type: ambient; intensity: 0.6"></a-entity>
-
-  <!-- Sun light (reduced intensity so planets are not blown out) -->
   <a-entity light="type: point; intensity: 2; distance: 200; decay: 2"
             position="0 0 0"></a-entity>
 
   <!-- ================= BACKGROUND ================= -->
   <a-sky src="#starsTex" rotation="0 -90 0"></a-sky>
 
-  <!-- ================= SUN (EMISSIVE) ================= -->
+  <!-- ================= SUN ================= -->
   <a-sphere radius="2.5"
             src="#sunTex"
             segments-width="64"
@@ -48,87 +44,81 @@
             material="emissive: #ffcc66; emissiveIntensity: 0.8">
   </a-sphere>
 
-  <!-- ================= STATIC HORIZONTAL ORBITS ================= -->
-  <a-torus radius="6"  radius-tubular="0.01" rotation="90 0 0" color="#777"></a-torus>
-  <a-torus radius="9"  radius-tubular="0.01" rotation="90 0 0" color="#777"></a-torus>
-  <a-torus radius="12" radius-tubular="0.01" rotation="90 0 0" color="#777"></a-torus>
-  <a-torus radius="15" radius-tubular="0.01" rotation="90 0 0" color="#777"></a-torus>
-  <a-torus radius="20" radius-tubular="0.02" rotation="90 0 0" color="#999"></a-torus>
-  <a-torus radius="25" radius-tubular="0.02" rotation="90 0 0" color="#999"></a-torus>
-  <a-torus radius="30" radius-tubular="0.02" rotation="90 0 0" color="#999"></a-torus>
-  <a-torus radius="35" radius-tubular="0.02" rotation="90 0 0" color="#999"></a-torus>
+  <a-text value="Sun" position="0 3.5 0" align="center" color="white"
+          billboard scale="3 3 3"></a-text>
 
-  <!-- ================= PLANETS (MATTE MATERIALS) ================= -->
+  <!-- ================= ORBITS ================= -->
+  <a-torus radius="6"  radius-tubular="0.01" rotation="90 0 0"></a-torus>
+  <a-torus radius="9"  radius-tubular="0.01" rotation="90 0 0"></a-torus>
+  <a-torus radius="12" radius-tubular="0.01" rotation="90 0 0"></a-torus>
+  <a-torus radius="15" radius-tubular="0.01" rotation="90 0 0"></a-torus>
+  <a-torus radius="20" radius-tubular="0.02" rotation="90 0 0"></a-torus>
+  <a-torus radius="25" radius-tubular="0.02" rotation="90 0 0"></a-torus>
+  <a-torus radius="30" radius-tubular="0.02" rotation="90 0 0"></a-torus>
+  <a-torus radius="35" radius-tubular="0.02" rotation="90 0 0"></a-torus>
 
-  <!-- Mercury -->
+  <!-- ================= MERCURY ================= -->
   <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 4000; easing: linear">
-    <a-sphere radius="0.18" src="#mercuryTex"
-              position="6 0 0"
-              material="roughness: 1; metalness: 0"></a-sphere>
+    <a-sphere radius="0.18" src="#mercuryTex" position="6 0 0"></a-sphere>
+    <a-text value="Mercury" position="6 0.7 0" align="center"
+            color="white" scale="1.5 1.5 1.5" billboard></a-text>
   </a-entity>
 
-  <!-- Venus -->
+  <!-- ================= VENUS ================= -->
   <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 7000; easing: linear">
-    <a-sphere radius="0.38" src="#venusTex"
-              position="9 0 0"
-              material="roughness: 1; metalness: 0"></a-sphere>
+    <a-sphere radius="0.38" src="#venusTex" position="9 0 0"></a-sphere>
+    <a-text value="Venus" position="9 0.9 0" align="center"
+            color="white" scale="1.5 1.5 1.5" billboard></a-text>
   </a-entity>
 
-  <!-- Earth + Moon -->
+  <!-- ================= EARTH + MOON ================= -->
   <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear">
-    <a-sphere radius="0.42" src="#earthTex"
-              position="12 0 0"
-              material="roughness: 1; metalness: 0"></a-sphere>
+    <a-sphere radius="0.42" src="#earthTex" position="12 0 0"></a-sphere>
+    <a-text value="Earth" position="12 1 0" align="center"
+            color="white" scale="1.5 1.5 1.5" billboard></a-text>
 
     <a-entity position="12 0 0"
               animation="property: rotation; to: 0 360 0; loop: true; dur: 2000; easing: linear">
-      <a-sphere radius="0.12" src="#moonTex"
-                position="0.8 0 0"
-                material="roughness: 1; metalness: 0"></a-sphere>
+      <a-sphere radius="0.12" src="#moonTex" position="0.8 0 0"></a-sphere>
     </a-entity>
   </a-entity>
 
-  <!-- Mars -->
+  <!-- ================= MARS ================= -->
   <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 15000; easing: linear">
-    <a-sphere radius="0.3" src="#marsTex"
-              position="15 0 0"
-              material="roughness: 1; metalness: 0"></a-sphere>
+    <a-sphere radius="0.3" src="#marsTex" position="15 0 0"></a-sphere>
+    <a-text value="Mars" position="15 0.8 0" align="center"
+            color="white" scale="1.5 1.5 1.5" billboard></a-text>
   </a-entity>
 
-  <!-- Jupiter -->
+  <!-- ================= JUPITER ================= -->
   <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 20000; easing: linear">
-    <a-sphere radius="1.2" src="#jupiterTex"
-              position="20 0 0"
-              material="roughness: 1; metalness: 0"></a-sphere>
+    <a-sphere radius="1.2" src="#jupiterTex" position="20 0 0"></a-sphere>
+    <a-text value="Jupiter" position="20 1.8 0" align="center"
+            color="white" scale="1.8 1.8 1.8" billboard></a-text>
   </a-entity>
 
-  <!-- Saturn -->
+  <!-- ================= SATURN ================= -->
   <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 22000; easing: linear">
-    <a-sphere radius="1.0" src="#saturnTex"
-              position="25 0 0"
-              material="roughness: 1; metalness: 0"></a-sphere>
-
-    <a-ring src="#saturnRing"
-            position="25 0 0"
-            rotation="90 0 0"
-            radius-inner="1.2"
-            radius-outer="2"
-            material="transparent: true; side: double; opacity: 0.8">
-    </a-ring>
+    <a-sphere radius="1.0" src="#saturnTex" position="25 0 0"></a-sphere>
+    <a-ring src="#saturnRing" position="25 0 0" rotation="90 0 0"
+            radius-inner="1.2" radius-outer="2"
+            material="transparent: true; side: double; opacity: 0.8"></a-ring>
+    <a-text value="Saturn" position="25 1.6 0" align="center"
+            color="white" scale="1.8 1.8 1.8" billboard></a-text>
   </a-entity>
 
-  <!-- Uranus -->
+  <!-- ================= URANUS ================= -->
   <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 25000; easing: linear">
-    <a-sphere radius="0.8" src="#uranusTex"
-              position="30 0 0"
-              material="roughness: 1; metalness: 0"></a-sphere>
+    <a-sphere radius="0.8" src="#uranusTex" position="30 0 0"></a-sphere>
+    <a-text value="Uranus" position="30 1.4 0" align="center"
+            color="white" scale="1.6 1.6 1.6" billboard></a-text>
   </a-entity>
 
-  <!-- Neptune -->
+  <!-- ================= NEPTUNE ================= -->
   <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 28000; easing: linear">
-    <a-sphere radius="0.8" src="#neptuneTex"
-              position="35 0 0"
-              material="roughness: 1; metalness: 0"></a-sphere>
+    <a-sphere radius="0.8" src="#neptuneTex" position="35 0 0"></a-sphere>
+    <a-text value="Neptune" position="35 1.4 0" align="center"
+            color="white" scale="1.6 1.6 1.6" billboard></a-text>
   </a-entity>
 
   <!-- ================= CAMERA ================= -->
